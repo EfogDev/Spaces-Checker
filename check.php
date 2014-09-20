@@ -20,8 +20,8 @@
 		}
 
 		public function alert($text, $sound) {
-            exec("notify-send -i /home/efog/Dev/info.png Spaces '$text'");
-			if ($sound) exec("mplayer /home/efog/Dev/info.mp3 1>/dev/null 2>/dev/null");
+            exec("notify-send -i " . __DIR__ . "/info.png Spaces '$text'");
+			if ($sound) exec("mplayer " . __DIR__ . "/info.mp3 1>/dev/null 2>/dev/null");
 		}
 
 		public function check() {
