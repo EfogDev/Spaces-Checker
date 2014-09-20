@@ -15,7 +15,7 @@
 			);
 		}
 
-		public function alert($text) {
+		public function alert($text) { 
       exec("notify-send -i /home/efog/Dev/info.png Spaces '$text'");
 			exec("mplayer /home/efog/Dev/info.mp3 1>/dev/null 2>/dev/null");
 		}
