@@ -1,5 +1,4 @@
-Spaces-Checker
-Checks for new events on Spaces.ru.
+Spaces-Checker - checks for new events on Spaces.ru.
 
 Installing:
 
@@ -18,3 +17,18 @@ Installing:
 			> ./check.php 123
 		Where 123 is your SID on Spaces.ru.
 	6. PROFIT!
+
+Usage:
+
+	If you simply want to check new events, you can just run script with SID parameter:
+		> spaces YOUR_SID (suppose that we created symlink "spaces" to /bin)
+	If you want to check only specified events, use -c parameter. Example:
+		> spaces YOUR_SID -c mail,journal (feed will not checking on)
+		Use "mail", "journal" and "feed" keywords.
+	If you want to play sound only when specified event is happened, use -s parameter:
+		> spaces YOUR_SID -s mail (sound will not player when journal or feed comes)
+	Default settings:
+		-c mail,journal,feed
+		-s mail,journal,feed
+
+Enjoy!
