@@ -20,7 +20,7 @@
 		}
 
 		public function alert($text, $sound) {
-            exec("notify-send -i " . __DIR__ . "/info.png Spaces '$text'");
+			exec("notify-send -i " . __DIR__ . "/info.png Spaces '$text'");
 			if ($sound) exec("mplayer " . __DIR__ . "/info.mp3 1>/dev/null 2>/dev/null");
 		}
 
