@@ -1,33 +1,36 @@
-Spaces-Checker - checks for new events on Spaces.ru.
+Spaces-Checker - уведомления о новых событиях на Spaces.ru в реальном времени.
 
-Installing:
-
-	1. Download .zip archive.
-	3. (not necessarily) Create symlink for check.php:
+	1. Скачайте .zip архив и распакуйте в какую-нибудь папку.
+	3. (не обязательно) Создайте симлинк на check.php (выполнять из-под root или с sudo).
 			> ln -s /path/to/check.php /bin/spaces
-		(you should have root access)
-	3. Let check.php to be runned
+	3. Предоставьте check.php права запуска.
 	 		> chmod +x /path/to/check.php
-	4. Run script:
-		If you have created symlink
-		 	> spaces 123
-		If you not
-			> cd /path/to/checkphp
-			> ./check.php 123
-		Where 123 is your SID on Spaces.ru.
-	5. PROFIT!
 
-Usage:
+Использование:
 
-	If you simply want to check new events, you can just run script with SID parameter:
-		> spaces YOUR_SID (suppose that we created symlink "spaces" to /bin)
-	If you want to check only specified events, use -c parameter. Example:
-		> spaces YOUR_SID -c mail,journal (feed will not checking on)
-		Use "mail", "journal" and "feed" keywords.
-	If you want to play sound only when specified event is happened, use -s parameter:
-		> spaces YOUR_SID -s mail (sound will not player when journal or feed comes)
-	Default settings:
-		-c mail,journal,feed
-		-s mail,journal,feed
+	-a,	--sid
+		Указывает SID для входа. Пример: spaces --sid 123
+		Обязательный парамерт, если не задан -f или --file.
+	-f, --file
+		Указывает файл, хранящий SID. Пример: spaces -f .conf
+		Обязательный парамерт, если не задан -a или --sid.
+	-c, --check
+		Указывает события, о которых нужно оповещать.
+		Ключевые слова: mail (почта), journal (журнал), feed (лента).
+		Пример: spaces --check mail,feed
+		Значение по умолчанию: mail,journal,feed.
+	-s, --sound
+		Указывает события, наступление которых необходимо сопровождать звуком.
+		Пример: spaces --sound mail,journal
+		Значение по умолчанию: mail,journal,feed.
+	-i, --interval
+		Устанавливает интервал проверки новых событий.
+		Значение по умолчанию: 3.
+	-g, --groups
+		Указывает, какие группы неоходимо мониторить на наличие новых тем.
+		Пример: spaces --groups 79936,5692
+	-ngs, --no-group-sound
+		Не сопровождать появление новых тем в группах звуком.
+		Пример: spaces --no-group-sound
 
-Enjoy!
+Наслаждайтесь!
