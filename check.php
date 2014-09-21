@@ -176,7 +176,7 @@
 	$params = $argv;
 	$pcount = count($params);
 	$groups = array();
-	$interval = 3;
+	$interval = 5;
 	$group_sound = 1;
 	for ($i = 1; $i < $pcount; $i++) {
 		switch ($params[$i]) {
@@ -246,7 +246,7 @@
 	$spaces = new spaces($sid, $default_settings, $default_sounds, $groups, $group_sound);
 
 	$spaces->check();
-	sleep(2);
+	sleep(1);
 	$spaces->init_groups();
 	sleep($interval);
 	while (true) {
